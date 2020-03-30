@@ -5,9 +5,9 @@ import java.util.Scanner;
 public class Account 
 {
 	
-	String account;
-	String name;
-	int money;
+	public String account;
+	public String name;
+	public int money;
 
 	
 	
@@ -22,20 +22,16 @@ public class Account
 		System.out.print("잔고: ");
 		money = scan.nextInt();
 		System.out.println("계좌개설이 완료되었습니다.");
-		
 	}
 	
-	//입금
-	public void depositMoney() {
-		
-	}
 	
-	//출금
-	public void withdrawMoney() {
-		
-	}
 	
+	//전체계좌정보출력
 	public void showAccInfo() {
-		
+		System.out.println("***계좌정보출력***");
+		System.out.println("계좌번호 "+ account);
+		System.out.println("고객이름 "+ name);
+		System.out.println("잔고 "+ money);
+		System.out.println("전체계좌정보출력이 완료되었습니다.");
 	}
 }
