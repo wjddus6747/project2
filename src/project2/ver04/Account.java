@@ -1,8 +1,9 @@
 package project2.ver04;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
-public abstract class Account
+public abstract class Account implements Serializable
 {
 	public String account;
 	public String name;

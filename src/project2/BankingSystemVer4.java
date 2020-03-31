@@ -43,11 +43,14 @@ public class BankingSystemVer4 implements MenuChoice
 				continue;
 			} else if (number == INQUIRE)
 			{
+				acm.InAccount();
 				acm.show();
 				continue;
 				
 			} else if (number == EXIT)
 			{
+				acm.outAccount();
+				System.out.println("프로그램을 종료합니다.");
 				break;
 			} 
 			else if (number < 1 || number > 5)

@@ -1,5 +1,12 @@
 package project2.ver04;
 
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -175,6 +182,40 @@ public class AccountManager implements CustomSpecialRate
 		{
 			Account ac = itr.next();
 			ac.showAccInfo();
+		}
+	}
+	
+	//저장
+	public void outAccount() {
+		try
+		{
+			ObjectOutputStream output = new ObjectOutputStream(new FileOutputStream("src/project2/ver04/Bank.obj"));
+			
+			output.writeObject(saveaccount);
+			output.close();
+		} catch (Exception e)
+		{
+			System.out.println("예외발생");
+			e.printStackTrace();
+		} 
+	}
+	
+	//출력
+	public void InAccount() {
+		try {
+			ObjectInputStream input = new ObjectInputStream(new FileInputStream("src/project2/ver04/Bank.obj"));
+			
+			HashSet<Account> saveaccount = (HashSet<Account>) input.readObject();
+			Iterator<Account> itr = saveaccount.iterator();
+			while(itr.hasNext()) {
+				Account ac = itr.next();
+				ac.showAccInfo();
+			}
+			input.close();
+		}
+		catch (Exception e) {
+			System.out.println("출력예외발생");
+			e.printStackTrace();
 		}
 	}
 
