@@ -9,7 +9,6 @@ public class PuzzleMethod
 	public String[][] puzzleArrayInit()
 	{
 		String[][] pa = new String[3][3];
-		String adws;
 		int num = 1;
 		System.out.println("퍼즐 초기화");
 		for (int i = 0; i < 3; i++)
@@ -192,7 +191,6 @@ public class PuzzleMethod
 	public void puzzleGame()
 	{
 		String[][] realPuzzle = puzzleArrayInit();
-		String a = "s";
 		while (true)
 		{
 			Scanner scanner = new Scanner(System.in);
