@@ -214,8 +214,7 @@ public class AccountManager implements CustomSpecialRate
 			input.close();
 		}
 		catch (Exception e) {
-			System.out.println("출력예외발생");
-			e.printStackTrace();
+			System.out.println("저장된객체파일없음");
 		}
 	}
 
